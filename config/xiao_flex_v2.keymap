@@ -9,28 +9,38 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        comms {
+            bindings = <&none>;
+            key-positions = <42>;
+            layers = <0>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-&kp ESC    &kp Q  &kp W     &kp E      &kp R      &kp T     &kp A    &kp B  &kp Y    &kp U     &kp I      &kp O     &kp P     &kp LBKT
-&kp TAB    &kp A  &kp S     &kp D      &kp F      &kp G     &kp C    &kp D  &kp H    &kp J     &kp K      &kp L     &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z  &kp X     &kp C      &kp V      &kp B                     &kp N    &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
-                  &kp LEFT  &kp RIGHT                                                          &kp UP     &kp DOWN
-                            &kp LSHFT  &kp SPACE  &kp BSPC                  &kp DEL  &kp RET   &kp RGUI
-                            &kp LCTRL  &kp LALT   &mo 1                     &mo 2    &kp RALT  &kp RCTRL
+&kp ESC  &kp Q  &kp B   &kp Y      &kp O      &kp U     &kp SINGLE_QUOTE    &kp B       &kp L    &kp D     &kp W      &kp V   &kp Z     &trans
+&trans   &kp A  &kp C   &kp I      &kp E      &kp A     &kp COMMA           &kp PERIOD  &kp H    &kp T     &kp S      &kp N   &kp Q     &trans
+&trans   &kp Z  &kp G   &kp X      &kp J      &kp K                                     &kp R    &kp M     &kp F      &kp P   &kp FSLH  &trans
+                &trans  &trans                                                                             &trans     &trans
+                        &kp LSHFT  &kp SPACE  &kp BSPC                                  &kp DEL  &kp RET   &kp RGUI
+                        &kp LCTRL  &kp LALT   &mo 1                                     &mo 2    &kp RALT  &kp RCTRL
             >;
         };
 
         layer_1 {
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans    &trans  &trans  &trans    &kp UP    &trans     &trans  &trans
-&kp F1      &kp F2        &kp F3        &kp F4        &kp F5        &kp F6        &trans    &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
-&kp F7      &kp F8        &kp F9        &kp F10       &kp F11       &kp F12                         &trans  &trans    &trans    &trans     &trans  &trans
-                          &trans        &trans                                                                        &trans    &trans
-                                        &bootloader   &trans        &trans                          &trans  &trans    &trans
-                                        &trans        &trans        &trans                          &trans  &trans    &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans    &trans  &kp UP_ARROW    &trans           &trans  &trans  &trans  &trans
+&kp F1      &kp F2        &kp F3        &kp F4        &kp F5        &kp F6        &trans    &trans  &kp LEFT        &kp RIGHT_ARROW  &trans  &trans  &trans  &trans
+&kp F7      &kp F8        &kp F9        &kp F10       &kp F11       &kp F12                         &kp DOWN_ARROW  &trans           &trans  &trans  &trans  &trans
+                          &trans        &trans                                                                                       &trans  &trans
+                                        &bootloader   &trans        &trans                          &trans          &trans           &trans
+                                        &trans        &trans        &trans                          &trans          &trans           &trans
             >;
         };
 

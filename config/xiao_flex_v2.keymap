@@ -12,10 +12,19 @@
     combos {
         compatible = "zmk,combos";
 
-        comms {
-            bindings = <&none>;
-            key-positions = <42>;
+        screenshot {
+            bindings = <&kp RG(RC(RA(NUMBER_4)))>;
+            key-positions = <28>;
             layers = <0>;
+        };
+    };
+
+    macros {
+        new_macro: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "NEW_MACRO";
         };
     };
 
@@ -24,12 +33,12 @@
 
         default_layer {
             bindings = <
-&kp ESC    &kp Q  &kp B             &kp Y       &kp O      &kp U     &kp SINGLE_QUOTE    &kp B       &kp L    &kp D     &kp W             &mt LG(V) V       &mt RG(Z) Z  &trans
-&kp GRAVE  &kp A  &mt RG(C) C       &kp I       &kp E      &kp A     &kp COMMA           &kp PERIOD  &kp H    &kp T     &kp S             &kp N             &kp Q        &trans
-&trans     &kp Z  &kp G             &kp X       &kp J      &kp K                                     &kp R    &kp M     &kp F             &kp P             &kp FSLH     &trans
-                  &kp LG(NUMBER_6)  &kp LG(N5)                                                                          &kp RG(NUMBER_1)  &kp RG(NUMBER_2)
-                                    &kp LSHFT   &kp SPACE  &kp BSPC                                  &kp DEL  &kp RET   &kp RGUI
-                                    &kp LCTRL   &kp LALT   &mo 1                                     &mo 2    &kp RALT  &kp RCTRL
+&kp ESC    &trans  &kp B             &kp Y       &kp O      &kp U     &kp SINGLE_QUOTE    &kp B       &kp L    &kp D     &kp W             &mt LG(V) V       &mt RG(Z) Z  &trans
+&kp GRAVE  &trans  &mt RG(C) C       &kp I       &kp E      &kp A     &kp COMMA           &kp PERIOD  &kp H    &kp T     &kp S             &kp N             &kp Q        &trans
+&trans     &trans  &kp G             &kp X       &kp J      &kp K                                     &kp R    &kp M     &kp F             &kp P             &kp FSLH     &trans
+                   &kp LG(NUMBER_6)  &kp LG(N5)                                                                          &kp RG(NUMBER_1)  &kp RG(NUMBER_2)
+                                     &kp LSHFT   &kp SPACE  &kp BSPC                                  &kp DEL  &kp RET   &kp RGUI
+                                     &kp LCTRL   &kp LALT   &mo 1                                     &mo 2    &kp RALT  &kp RCTRL
             >;
         };
 

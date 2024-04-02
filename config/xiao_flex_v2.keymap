@@ -9,36 +9,19 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        screenshot {
-            bindings = <&kp RG(RC(RA(NUMBER_4)))>;
-            key-positions = <28>;
-            layers = <0>;
-        };
-    };
-
-    macros {
-        new_macro: new_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none>;
-            label = "NEW_MACRO";
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-&kp ESC    &kp TILDE  &kp B             &kp Y       &kp O          &kp U      &kp SINGLE_QUOTE    &kp B       &kp L    &kp D      &kp W             &mt LG(V) V       &mt RG(Z) Z  &trans
-&kp GRAVE  &trans     &mt RG(C) C       &kp I       &kp E          &kp A      &kp COMMA           &kp PERIOD  &kp H    &kp T      &kp S             &kp N             &kp Q        &trans
-&trans     &trans     &kp G             &kp X       &kp J          &kp K                                      &kp R    &kp M      &kp F             &kp P             &kp FSLH     &kp TAB
-                      &kp LG(NUMBER_6)  &kp LG(N5)                                                                                &kp RG(NUMBER_1)  &kp RG(NUMBER_2)
-                                        &kp LSHFT   &kp BACKSPACE  &kp ENTER                                  &kp RET  &kp SPACE  &kp RSHFT
-                                        &kp LGUI    &kp LALT       &tog 1                                     &tog 2   &kp RALT   &kp RGUI
+&kp ESC                   &kp TILDE  &kp B             &kp Y       &kp O          &kp U      &kp SINGLE_QUOTE    &kp SEMI    &kp L    &kp D      &kp W             &mt LG(V) V       &mt RG(Z) Z  &trans
+&kp GRAVE                 &trans     &mt RG(C) C       &kp I       &kp E          &kp A      &kp COMMA           &kp PERIOD  &kp H    &kp T      &kp S             &kp N             &kp Q        &trans
+&kp LG(LC(LS(NUMBER_4)))  &trans     &kp G             &kp X       &kp J          &kp K                                      &kp R    &kp M      &kp F             &kp P             &kp FSLH     &kp TAB
+                                     &kp LG(NUMBER_6)  &kp LG(N5)                                                                                &kp RG(NUMBER_1)  &kp RG(NUMBER_2)
+                                                       &kp LSHFT   &kp BACKSPACE  &kp ENTER                                  &kp RET  &kp SPACE  &kp RSHFT
+                                                       &kp LGUI    &kp LALT       &tog 1                                     &tog 2   &kp RALT   &kp RGUI
             >;
         };
 
@@ -55,7 +38,7 @@
 
         layer_2 {
             bindings = <
-&trans  &trans  &kp LBRC    &kp RBRC       &kp LPAR  &kp RPAR     &trans             &trans           &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PLUS      &kp EQUAL  &trans
+&trans  &trans  &kp LBRC    &kp RBRC       &kp LPAR  &kp RPAR     &kp MINUS          &trans           &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PLUS      &kp EQUAL  &trans
 &trans  &trans  &kp DOLLAR  &kp PERCENT    &kp HASH  &kp AT_SIGN  &kp EXCLAMATION    &kp KP_NUMBER_0  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp MINUS     &trans     &trans
 &trans  &trans  &kp CARET   &kp AMPERSAND  &kp LBKT  &kp RBKT                                         &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp SLASH     &trans     &trans
                 &trans      &trans                                                                                                      &trans           &kp ASTERISK
